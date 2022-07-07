@@ -1,94 +1,91 @@
-import React, {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
-import './Navbar.css';
+import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
 
-function Navbar(){
+function Navbar() {
   const [menuButton, setMenuButton] = useState(false);
-  const [btnVis, setBtnVis] = useState(false);
+  const [buttonVis, setButtonVis] = useState(true);
+  const photo = require('../assets/images/propic.PNG');
 
-  useEffect(()=>{
-  showButton();
-  },[]);
 
-  const menuButtonFunc= () => {
-  setMenuButton(!menuButton);
+  const handleMenuButton = () => {
+    setMenuButton(!menuButton);
   }
 
-  const closeMenuFunc= () => {
-  setMenuButton(false);
+
+  const closeMobileMenu = () => {
+    setMenuButton(false);
   }
 
   const showButton = () => {
-    if(window.innerWidth<=960){
-    setBtnVis(true);
+    if (window.innerWidth <= 960) {
+      setButtonVis(false);
+    } else {
+      setButtonVis(true);
     }
-  }
+  };
+
+
+
+  useEffect(() => {
+    showButton();
+  }, []);
 
   window.addEventListener('resize', showButton);
 
+  return (
+    <>
+      <nav className='navbar'>
+        <div className='navbar-container'>
+          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+            FROST
+            <i class='fab fa-typo3' />
+            <img src={photo} width="50" height="50" />
+          </Link>
+          <div className='menu-icon' onClick={handleMenuButton}>
+            <i className={menuButton ? 'fas fa-times' : 'fas fa-bars'} />
+          </div>
+          <ul className={menuButton ? 'nav-menu active' : 'nav-menu'}>
+            <li className='nav-item'>
+              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                Home
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/stats'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Stats
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link
+                to='/specs'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Specs
+              </Link>
+            </li>
 
-    return(
-        <>
-          <nav className="navbar">
-            <div className="navbar-container">
-                <Link to="/" className="navbar-logo">
-                Frost
-                <i class='fab fa-typo3' />
-                </Link>
-                {btnVis && <div
-                    className="menu-bar"
-                    onClick={menuButtonFunc}
-                    >
-                        <i className={menuButton ? 'fas fa-times' : 'fas fa-bars'} />
-                </div>}
-                <ul className={menuButton ? 'nav-menu active' : 'nav-menu'}>
-                    <li className='nav-item'>
-                        <Link
-                            to='/home'
-                            className='nav-link'
-                            onClick={closeMenuFunc}
-                            >
-                            Home
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link
-                            to='/stats'
-                            className='nav-link'
-                            onClick={closeMenuFunc}
-                            >
-                            Stats
-                        </Link>
-                    </li>
-                    <li className='nav-item'>
-                        <Link
-                        to='/specs'
-                        className='nav-link'
-                        onClick={closeMenuFunc}
-
-                        >
-                            Specs
-                        </Link>
-                    </li>
-                    <li className='nav-links-mobile'>
-                        <Link
-                        to='/specs'
-                        className='nav-link'
-                        onClick={closeMenuFunc}
-                        >
-                          sign up
-                        </Link>
-                    </li>
-                </ul>
-                {btnVis && <Button buttonStyle='btnOutline'>SIGN UP</Button>}
-            </div>
-
-          </nav>
-        </>
-
-    )
+            <li>
+              <Link
+                to='/data'
+                className='nav-links-mobile'
+                onClick={closeMobileMenu}
+              >
+                Enter Your Data
+              </Link>
+            </li>
+          </ul>
+          {buttonVis && <Button buttonStyle='btn--outline'>Enter Your Data</Button>}
+        </div>
+      </nav>
+    </>
+  );
 }
 
-export default Navbar
-
+export default Navbar;
