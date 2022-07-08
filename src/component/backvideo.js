@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { Button } from './Button';
-import './Backvideo.css';
+import './backvideo.css';
 
 function Backvideo() {
 
