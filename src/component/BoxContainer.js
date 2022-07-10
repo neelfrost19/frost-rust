@@ -1,46 +1,56 @@
 import React from 'react';
 import './BoxContainer.css';
 import Box from './Box';
+import {useEffect, useState} from "react";
+import axios from "axios"
+
 
 function BoxContainer() {
+    const[repo, setRepo] = useState([]);
+
+    const getRepo = async () => {
+            try{
+                const data = await axios('https://api.github.com/users/neelfrost19/repos');
+                setRepo(data);
+                console.log(repo);
+            }
+            catch(err){
+                console.log(err);
+            }
+        }
+
+
+
   return (
     <div className='box'>
-      <h1>Check out these EPIC Destinations!</h1>
+      <h1>Check out these Projects!</h1>
       <div className='box__container'>
         <div className='box__wrapper'>
-          <ul className='box__items'>
+          {/*<ul className='box__items'>
             <Box
               src='images/img-9.jpg'
-              text='Explore the hidden waterfall deep inside the Amazon Jungle'
-              label='Adventure'
+              text='A project written in java to capture and read packets using JPnet library'
+              label='JAVA'
               path='/services'
             />
             <Box
               src='images/img-2.jpg'
-              text='Travel through the Islands of Bali in a Private Cruise'
-              label='Luxury'
-              path='/services'
+              text='This website'
+              label='React.js'
+              path='/Home'
             />
-          </ul>
+          </ul>*/}
           <ul className='box__items'>
-            <Box
-              src='images/img-3.jpg'
-              text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
-              label='Mystery'
-              path='/services'
-            />
-            <Box
-              src='images/img-4.jpg'
-              text='Experience Football on Top of the Himilayan Mountains'
-              label='Adventure'
-              path='/products'
-            />
-            <Box
-              src='images/img-8.jpg'
-              text='Ride through the Sahara Desert on a guided camel tour'
-              label='Adrenaline'
-              path='/sign-up'
-            />
+          {repo.length!==0?repo.data.map((item, i)=>{
+                <Box
+                src='images/img-2.jpg'
+                text = {item.description}
+                label = {item.language}
+                path='/Home'
+                />
+               }
+            ):[]
+          }
           </ul>
         </div>
       </div>

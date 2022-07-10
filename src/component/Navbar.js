@@ -41,7 +41,7 @@ function Navbar() {
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             FROST
             <i class='fab fa-typo3' />
-            <img src={photo} width="50" height="50" />
+            
           </Link>
           <div className='menu-icon' onClick={handleMenuButton}>
             <i className={menuButton ? 'fas fa-times' : 'fas fa-bars'} />
