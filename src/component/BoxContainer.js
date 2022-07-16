@@ -3,11 +3,42 @@ import './BoxContainer.css';
 import Box from './Box';
 import {useEffect, useState} from "react";
 import axios from "axios"
+import { Button } from './Button';
 
 
 function BoxContainer() {
     const[repo, setRepo] = useState([]);
+    const[repoData, setRepoData] =useState('');
+    const[btnVis, setBtnVis] = useState(true);
 
+    async function repoDataURL() {
+        //Get repo data about github user
+        setBtnVis(false);
+        await fetch("https://api.github.com/users/neelfrost19/repos")
+          .then((res) => res.json())
+          .then(
+            (result) => {
+              console.log(36, result);
+              const list = result.map((item) => (
+
+                <div>
+                    <ul className='box__items'>
+                        <Box
+                        src='images/img-2.jpg'
+                        text = 'tytytuytuytt6uytuy6tuy6tuy6tyutuytyutuytuy6tuy6t67ut67t67t'
+                        label = {item.name}
+                        path='/Home'
+                        />
+                    </ul>
+                </div>
+              ));
+              setRepoData(list);
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
+      }
     const getRepo = async () => {
             try{
                 const data = await axios('https://api.github.com/users/neelfrost19/repos');
@@ -26,6 +57,10 @@ function BoxContainer() {
       <h1>Check out these Projects!</h1>
       <div className='box__container'>
         <div className='box__wrapper'>
+        {btnVis && <Button variant="primary" onClick={repoDataURL}>
+                    List my public repos!
+        </Button>}
+        {repoData}
           {/*<ul className='box__items'>
             <Box
               src='images/img-9.jpg'
@@ -40,7 +75,7 @@ function BoxContainer() {
               path='/Home'
             />
           </ul>*/}
-          <ul className='box__items'>
+          {/*<ul className='box__items'>
           {repo.length!==0?repo.data.map((item, i)=>{
                 <Box
                 src='images/img-2.jpg'
@@ -51,7 +86,7 @@ function BoxContainer() {
                }
             ):[]
           }
-          </ul>
+          </ul>*/}
         </div>
       </div>
     </div>
