@@ -11,6 +11,10 @@ function BoxContainer() {
     const[repoData, setRepoData] =useState('');
     const[btnVis, setBtnVis] = useState(true);
 
+    const openInNewTab = url => {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        };
+
     async function repoDataURL() {
         //Get repo data about github user
         setBtnVis(false);
@@ -24,10 +28,11 @@ function BoxContainer() {
                 <div>
                     <ul className='box__items'>
                         <Box
-                        src='images/img-2.jpg'
-                        text = 'tytytuytuytt6uytuy6tuy6tuy6tyutuytyutuytuy6tuy6t67ut67t67t'
-                        label = {item.name}
-                        path='/Home'
+                        src={item.owner.avatar_url}
+                        text = 'A project written in java to capture and read packets using JPnet library'
+                        label = {item.name +" (" +item.language+")"}
+                        path='/'
+                        onClick={() => openInNewTab(item.html_url)}
                         />
                     </ul>
                 </div>
@@ -57,8 +62,13 @@ function BoxContainer() {
       <h1>Check out these Projects!</h1>
       <div className='box__container'>
         <div className='box__wrapper'>
-        {btnVis && <Button variant="primary" onClick={repoDataURL}>
-                    List my public repos!
+        {btnVis &&
+        <Button
+            className='btns'
+            style='btn--black'
+            onClick={repoDataURL}
+        >
+            List my public repos!
         </Button>}
         {repoData}
           {/*<ul className='box__items'>

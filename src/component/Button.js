@@ -17,11 +17,12 @@ export const Button = ({
     const checkStyle = styles.includes(style) ? style : styles[0];
 
     const checkSize = sizes.includes(size) ? size : sizes[0];
+
     return(
     <Link to='' className='btn-mobile'>
         <button
         type={type}
-        className={'btn ${checkStyle} ${checkSize}'}
+        className={"" +checkStyle +" "+checkSize}
         onClick={onClick}
         >
             {children}

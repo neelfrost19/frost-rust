@@ -24,6 +24,12 @@
   transition: all 0.3s ease-out;
 }
 
+.btn--black{
+  background-color: #242424;
+  color: #d7e3f7;
+  border: 1px solid var(--primary);
+}
+
 .btn--medium {
   padding: 8px 20px;
   font-size: 18px;
