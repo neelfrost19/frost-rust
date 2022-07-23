@@ -27,7 +27,7 @@
 .btn--black{
   background-color: #242424;
   color: #d7e3f7;
-  border: 1px solid var(--primary);
+  border: 1px solid ;
 }
 
 .btn--medium {

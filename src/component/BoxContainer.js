@@ -15,6 +15,10 @@ function BoxContainer() {
           window.open(url, '_blank', 'noopener,noreferrer');
         };
 
+    const closeList = () => {
+        setBtnVis(true);
+    }
+
     async function repoDataURL() {
         //Get repo data about github user
         setBtnVis(false);
@@ -66,11 +70,21 @@ function BoxContainer() {
         <Button
             className='btns'
             style='btn--black'
+            size='btn--large'
             onClick={repoDataURL}
         >
-            List my public repos!
+            List my repositories
         </Button>}
-        {repoData}
+        {!btnVis && repoData}
+        {!(btnVis) &&
+                <Button
+                    className='btns'
+                    style='btn--black'
+                    size='btn--medium'
+                    onClick={closeList}
+                >
+                    close
+                </Button>}
           {/*<ul className='box__items'>
             <Box
               src='images/img-9.jpg'
