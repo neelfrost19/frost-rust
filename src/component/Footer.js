@@ -4,6 +4,11 @@ import { Button } from './Button';
 import { Link } from 'react-router-dom';
 
 function Footer() {
+
+  const openInNewTab = url => {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      };
+
   return (
     <div className='footer-container'>
       <div class='footer-links'>
@@ -11,12 +16,27 @@ function Footer() {
           <div class='footer-link-items'>
             <h2>About Me</h2>
             <Link to='/'>Resume</Link>
-            <Link to='/'>Youtube</Link>
+            <Link
+                to='/'
+                onClick={() =>
+                openInNewTab('https://www.youtube.com/watch?v=yr7P8fyo6uU')}
+            >
+            Youtube
+            </Link>
           </div>
           <div class='footer-link-items'>
             <h2>Contact Me</h2>
-            <Link to='/'>LinkedIn</Link>
-            <Link to='/'>GitHub</Link>
+            <Link to='/'
+                  onClick={() =>
+                  openInNewTab('https://www.linkedin.com/in/neelesh-kumar-das-600549166/')}
+            >
+            LinkedIn
+            </Link>
+            <Link
+                to='/'
+                onClick={() => openInNewTab('https://github.com/neelfrost19')}
+            >GitHub
+            </Link>
           </div>
         </div>
       </div>
@@ -32,6 +52,8 @@ function Footer() {
             <Link
               class='social-icon-link youtube'
               to='/'
+              onClick={() =>
+                openInNewTab('https://www.youtube.com/watch?v=yr7P8fyo6uU')}
               target='_blank'
               aria-label='Youtube'
             >
@@ -43,7 +65,10 @@ function Footer() {
               target='_blank'
               aria-label='LinkedIn'
             >
-              <i class='fab fa-linkedin' />
+              <i
+              class='fab fa-linkedin'
+              onClick={() => openInNewTab('https://www.linkedin.com/in/neelesh-kumar-das-600549166/')}
+              />
             </Link>
           </div>
         </div>
