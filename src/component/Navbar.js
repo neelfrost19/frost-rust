@@ -6,7 +6,7 @@ import './Navbar.css';
 function Navbar() {
   const [menuButton, setMenuButton] = useState(false);
   const [buttonVis, setButtonVis] = useState(true);
-  const photo = require('../assets/images/propic.PNG');
+  const photo = '/images/propic1.png';
 
 
   const handleMenuButton = () => {
@@ -26,8 +26,6 @@ function Navbar() {
     }
   };
 
-
-
   useEffect(() => {
     showButton();
   }, []);
@@ -40,35 +38,43 @@ function Navbar() {
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             FROST
-            <i class='fab fa-typo3' />
-            
+            <img
+                className="frost-pic"
+                src={photo}
+            />
           </Link>
           <div className='menu-icon' onClick={handleMenuButton}>
             <i className={menuButton ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={menuButton ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              <a
+                href="#backvideo"
+                className='nav-links'
+                onClick={closeMobileMenu}
+                >
                 Home
-              </Link>
+              </a>
             </li>
             <li className='nav-item'>
-              <Link
-                to='/stats'
+              <a
+
+                href="#project"
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Stats
-              </Link>
+                Projects
+              </a>
             </li>
             <li className='nav-item'>
-              <Link
-                to='/specs'
+              <a
+                //to='/specs'
+                href="#about"
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Specs
-              </Link>
+                About
+              </a>
             </li>
 
             <li>

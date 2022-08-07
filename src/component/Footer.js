@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
 
+  const photo = '/images/propic1.png';
+
   const openInNewTab = url => {
         window.open(url, '_blank', 'noopener,noreferrer');
       };
@@ -45,7 +47,10 @@ function Footer() {
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
               FROST
-              <i class='fab fa-typo3' />
+              <img
+                className="frost-pic"
+                src={photo}
+            />
             </Link>
           </div>
           <div class='social-icons'>

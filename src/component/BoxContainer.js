@@ -62,6 +62,7 @@ function BoxContainer() {
 
 
   return (
+   <section id="project">
     <div className='box'>
       <h1>Check out these Projects!</h1>
       <div className='box__container'>
@@ -114,6 +115,7 @@ function BoxContainer() {
         </div>
       </div>
     </div>
+     </section>
   );
 }
 

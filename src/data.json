@@ -1,0 +1,100 @@
+{
+  "main": {
+    "name": "Neelesh Kumar Das",
+    "occupation": "Software Engineer (JavaScript-React and Java)",
+    "image": "profilepic.jpg",
+    "bio": "Hi! I am Neelesh! Experienced in executing full life-cycle development projects, ramping up projects within time, budget & quality parameters,as per project management & targeting assignments in React,Java within the organization . Ability to understand business requirements and translate them into technical requirements.",
+    "contactmessage": "Get in touch with me!",
+    "email": "neelesh.das851@gmail.com",
+    "phone": "+91 9078013055",
+    "address": {
+      "street": "",
+      "city": "Angul",
+      "state": "Odisha",
+      "zip": "759122"
+    },
+
+    "social": [
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/neelesh-kumar-das-600549166/"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/neelfrost19"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "My Programming Language Proficiency",
+    "education": [
+      {
+        "school": "C.V. Raman Global Engineering",
+        "degree": "B.E, Mechanical Engineering",
+        "graduated": "July 2021",
+        "description": ""
+      },{
+        "school": "D.A.V Public School",
+        "degree": "Intermidate",
+        "graduated": "March 2017",
+        "description": ""
+      }
+    ],
+    "work": [
+      {
+        "company": "Wipro",
+        "title": "Project Engineer",
+        "years": "July 2021 - Present",
+        "description": [
+          {
+            "value": "-Developing new user-facing features using React.js."
+          },
+          {
+            "value": "-Building reusable components and front-end libraries for future use."
+          },
+          {
+            "value": "-Translating designs and wireframes into high quality code."
+          },
+          {
+            "value": "-Optimizing components for maximum performance across a vast array of web-capable devices and browsers."
+          },
+          {
+            "value": "-Strong proficiency in React and Java."
+          },
+          {
+            "value": "-Working with RESTful APIs."
+          },
+          {
+            "value": "-Familiarity with Agile Development"
+          },
+          {
+            "value": "-Familiarity with code versioning tools -GIT"
+          }
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "name": "ReactJs",
+        "level": "80%"
+      },
+      {
+        "name": "Java",
+        "level": "80%"
+      },
+      {
+        "name": "Git",
+        "level": "70%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "70%"
+      },
+      {
+        "name": "Web Development",
+        "level": "70%"
+      }
+
+    ]
+  }
+}

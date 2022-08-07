@@ -44,6 +44,18 @@ video {
   margin-left: 4px;
 }
 
+.textL {
+    color: white;
+    text-shadow: 1px 1px 4px black;
+    font: 'opensans-bold', sans-serif;
+}
+
+.textM {
+    color: grey;
+    text-shadow: 1px 1px 4px black;
+    font: 'opensans-bold', sans-serif;
+}
+
 @media screen and (max-width: 960px) {
   .hero-container > h1 {
     font-size: 70px;
