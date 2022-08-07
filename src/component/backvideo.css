@@ -47,13 +47,30 @@ video {
 .textL {
     color: white;
     text-shadow: 1px 1px 4px black;
-    font: 'opensans-bold', sans-serif;
+    text-align:center;
 }
 
 .textM {
     color: grey;
     text-shadow: 1px 1px 4px black;
-    font: 'opensans-bold', sans-serif;
+    font-family: "Poppins",sans-serif;
+    text-align:center;
+}
+
+.fontWelcome{
+    font-family: "Poppins",sans-serif;
+    font-weight:700;
+    position:relative;
+}
+
+.animFall {
+    transform: translateY(-100vh);
+    animation: fall 3.5s forwards;
+}
+@keyframes fall{
+    100%{
+        transform:translateY(0);
+    }
 }
 
 @media screen and (max-width: 960px) {

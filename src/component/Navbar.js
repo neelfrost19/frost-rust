@@ -76,6 +76,15 @@ function Navbar() {
                 About
               </a>
             </li>
+            <li className='nav-item'>
+              <a
+                href="#details"
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Details
+              </a>
+            </li>
 
             <li>
               <Link
@@ -83,11 +92,11 @@ function Navbar() {
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
-                Enter Your Data
+                Steam Data Viewer
               </Link>
             </li>
           </ul>
-          {buttonVis && <Button style='btn--outline'>Enter Your Data</Button>}
+          {buttonVis && <Button style='btn--outline'>Steam Data Viewer</Button>}
         </div>
       </nav>
     </>

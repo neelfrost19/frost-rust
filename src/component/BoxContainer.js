@@ -33,7 +33,7 @@ function BoxContainer() {
                     <ul className='box__items'>
                         <Box
                         src={item.owner.avatar_url}
-                        text = 'A project written in java to capture and read packets using JPnet library'
+                        text = {item.description}
                         label = {item.name +" (" +item.language+")"}
                         path='/'
                         onClick={() => openInNewTab(item.html_url)}
