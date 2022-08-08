@@ -8,11 +8,14 @@ function Navbar() {
   const [buttonVis, setButtonVis] = useState(true);
   const photo = '/images/propic1.png';
 
+  const openInNewTab = url => {
+        console.log('here');
+        window.open(url, '_blank', 'noopener,noreferrer');
+      };
 
   const handleMenuButton = () => {
     setMenuButton(!menuButton);
   }
-
 
   const closeMobileMenu = () => {
     setMenuButton(false);
@@ -86,9 +89,9 @@ function Navbar() {
               </a>
             </li>
 
-            <li>
+            <li onClick={()=>openInNewTab('https://steam-data-fetcher.netlify.app')}>
               <Link
-                to='/data'
+                to='/'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
@@ -96,7 +99,12 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {buttonVis && <Button style='btn--outline'>Steam Data Viewer</Button>}
+          {buttonVis && <Button
+            style='btn--outline'
+            onClick={()=>openInNewTab('https://steam-data-fetcher.netlify.app')}
+            >
+                Steam Data Viewer
+            </Button>}
         </div>
       </nav>
     </>
