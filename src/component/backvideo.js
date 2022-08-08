@@ -32,9 +32,18 @@ function Backvideo() {
     <div className='hero-container'>
       <video src={"/videos/video-"+videoNum+".mp4"} autoPlay loop muted />
       <p>
-        <h1 className='textL fontWelcome animFall'> Hi! I'm Neelesh Kumar Das.</h1>
+        <h1 className='textL fontWelcome animFall'>
+            <div className='word'>
+                <span>Hi! </span>
+                <span>I'm </span>
+                <span>Neelesh </span>
+                <span>Kumar </span>
+                <span>Das</span>
+                <span>.</span>
+            </div>
+        </h1>
         <br/>
-        <h5 className='textM'>Based in Bangalore. Software Engineer (JavaScript-React and Java)</h5>
+        <h5 className='textM animFade'>Based in Bangalore. Software Engineer (JavaScript-React and Java)</h5>
       </p>
       <div className='hero-btns'>
         <Button

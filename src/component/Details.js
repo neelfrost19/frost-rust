@@ -56,7 +56,7 @@ function Details(){
       <div className="row education">
         <div className="three columns header-col">
           <h1>
-            <span>Education</span>
+            <span className='underL'>Education</span>
           </h1>
         </div>
 
@@ -70,7 +70,7 @@ function Details(){
       <div className="row work">
         <div className="three columns header-col">
           <h1>
-            <span>Work</span>
+            <span className='underL'>Work</span>
           </h1>
         </div>
 
@@ -80,7 +80,7 @@ function Details(){
       <div className="row skill">
         <div className="three columns header-col">
           <h1>
-            <span>Skills</span>
+            <span className='underL'>Skills</span>
           </h1>
         </div>
 

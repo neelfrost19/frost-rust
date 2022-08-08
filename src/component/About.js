@@ -14,6 +14,10 @@ function About() {
   const [phone, setPhone] = useState(FrostData.main.phone);
   const [email, setEmail] = useState(FrostData.main.email);
 
+  const openInNewTab = url => {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      };
+
   useEffect(()=>{
     console.log(FrostData);
 
@@ -56,7 +60,9 @@ function About() {
               <Button
                 className='btns'
                 style='btn--black'
-                size='btn--large'>
+                size='btn--large'
+                onClick={() => openInNewTab('https://drive.google.com/u/0/uc?id=1zqknwaNhDtpKbasGP9jpG4M0ISq2j6Tu&export=download')}
+                >
                   <i className="fa fa-download"></i>
                    {"    Download Resume"}
               </Button>

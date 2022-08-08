@@ -26,7 +26,7 @@
     ]
   },
   "resume": {
-    "skillmessage": "My Programming Language Proficiency",
+    "skillmessage": "",
     "education": [
       {
         "school": "C.V. Raman Global Engineering",
@@ -69,6 +69,25 @@
           },
           {
             "value": "-Familiarity with code versioning tools -GIT"
+          }
+        ]
+      },
+      {
+        "company": "DMES",
+        "title": "Trainee",
+        "years": "July 2019 - November 2019",
+        "description": [
+          {
+            "value": "-Developing new component elements using C#"
+          },
+          {
+            "value": "-Developing shader code using entity component system"
+          },
+          {
+            "value": "-Creating 3d models and uv warp using Maya3D,zBrush"
+          },
+          {
+            "value": "-Creating Texture,UI elements using Photoshop, Substance Painter"
           }
         ]
       }
