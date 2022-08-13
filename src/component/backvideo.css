@@ -124,6 +124,10 @@ video {
     font-size: 30px;
   }
 
+  .word > span {
+      font-size: 35px;
+    }
+
   .btn-mobile {
     display: block;
     text-decoration: none;

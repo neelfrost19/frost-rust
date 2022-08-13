@@ -35,6 +35,10 @@ function Navbar() {
 
   window.addEventListener('resize', showButton);
 
+  window.scroll({
+    behavior: 'smooth'
+  });
+
   return (
     <>
       <nav className='navbar'>
@@ -53,7 +57,7 @@ function Navbar() {
             <li className='nav-item'>
               <a
                 href="#backvideo"
-                className='nav-links'
+                className='nav-links smooth-scroll'
                 onClick={closeMobileMenu}
                 >
                 Home
@@ -63,7 +67,7 @@ function Navbar() {
               <a
 
                 href="#project"
-                className='nav-links'
+                className='nav-links smooth-scroll'
                 onClick={closeMobileMenu}
               >
                 Projects
@@ -73,7 +77,7 @@ function Navbar() {
               <a
                 //to='/specs'
                 href="#about"
-                className='nav-links'
+                className='nav-links smooth-scroll'
                 onClick={closeMobileMenu}
               >
                 About
@@ -82,7 +86,7 @@ function Navbar() {
             <li className='nav-item'>
               <a
                 href="#details"
-                className='nav-links'
+                className='nav-links smooth-scroll'
                 onClick={closeMobileMenu}
               >
                 Details

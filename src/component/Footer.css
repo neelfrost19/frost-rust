@@ -157,6 +157,10 @@
   .social-media-wrap {
     flex-direction: column;
   }
+
+  .social-logo{
+    padding-left:25%;
+  }
 }
 
 @media screen and (max-width: 768px) {

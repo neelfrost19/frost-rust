@@ -65,3 +65,35 @@ img {
     max-width: 1020px;
     margin: 0 auto;
 }
+
+@media screen and (max-width: 768px) {
+
+.shift {
+    padding-left:25px;
+}
+
+.profile-pic {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-radius: 100%;
+}
+
+#about {
+    background: #2B2B2B;
+    padding-top: 96px;
+    padding-bottom: 66px;
+    padding-right: 60px;
+    overflow: hidden;
+}
+
+.header-col {
+    padding-right: 5%;
+    padding-left: 35%;
+}
+
+.main-col {
+    padding-right: 5%;
+    padding-top: 15%;
+}
+}
